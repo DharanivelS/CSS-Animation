@@ -6,19 +6,19 @@
 }
 body{
     min-height: 100vh;
-    background: #fff;
+    background: #FBFBFB;
 }
 .navigation{
     position: fixed;
+    top: 0;
     width: 60px;
     height: 100%;
-    background-color: #3e0748;
+    background-color: #fff;
     transition: 0.5s;
     overflow: hidden;
 }
-.navigation:hover,
 .navigation.active{
-    width: 300px;
+    width: 200px;
 }
 .navigation ul{
     position: absolute;
@@ -32,7 +32,7 @@ body{
     list-style-type: none;
 }
 .navigation ul li:hover{
-    background-color: #ea1d63;
+    background-color: #FBFBFB;
 }
 .navigation ul li a{
     position: relative;
@@ -40,7 +40,7 @@ body{
     width: 100%;
     display: flex;
     text-decoration: none;
-    color: #fff;
+    color: #000;
 }
 .navigation ul li a .icon{
     position: relative;
@@ -59,20 +59,19 @@ body{
     padding: 0 10px;
     height: 60px;
     line-height: 60px;
-    text-align: start;
     white-space: nowrap;
 }
 .toggle{
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     width: 60px;
     height: 60px;
-    background-color: #330748;
+    background-color: #fff;
     cursor: pointer;
 }
 .toggle.active{
-    background-color: #ea1d63;
+    background-color: #FBFBFB;
 }
 .toggle:before{
     content: '\f0c9';
@@ -83,10 +82,30 @@ body{
     line-height: 60px;
     text-align: center;
     font-size: 24px;
-    color: #fff;
+    color: #000;
 }
 .toggle.active:before{
     content: '\f00d';
+}
+.para{
+    position: relative;
+    margin-top: 40px;
+    margin-left: 80px;
+    margin-right: 80px;
+    z-index: -1;
+    transition: 0.5s;
+}
+.para.active{
+    margin-top: 40px;
+    margin-left: 220px;
+    margin-right: 80px;
+}
+h1{
+    font-weight: 500;
+}
+.text{
+    margin: 15px 0;
+    line-height: 1.5;
 }
 
 @media (max-width:767px)
@@ -97,5 +116,9 @@ body{
     .navigation.active{
         left: 0;
         width: 100%;
+    }
+    .para,.para.active{
+        margin: 40px 20px;
+        z-index: -1;
     }
 }
